@@ -1,0 +1,10 @@
+Create Jungle, an experiment in agentic web design.
+
+It's a public website that starts out totally blank, apart from a few persistent controls:
+"History" and "About" in the top left, history on top.
+
+The "About" page is a brief description of how this project works (without any of the real technical mechanics).
+
+The process of changes once the site is live is as follows:
+- When I run an agent session in this directory locally and type "Continue", the agent examines the existing website and asks itself: "What can I do to make this website more beautiful, detailed, compelling, engaging, polished, unique, performant, clear, user-friendly, easy to navigate, easy to use, subtle, surprising, mobile-friendly, reliable, secure, accessible, cohesive, functional, well designed, and technically impressive? What are the bugs I can identify and fix? What would draw more people in to increase the reach of the site? What is my vision for the future of this project?" It then implements one or more specific, contained sets of changes and publishes them.
+- The live website shows the result of the latest change: what the agent did last. The History page shows a browsable list of all changes since the site began.
