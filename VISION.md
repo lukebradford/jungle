@@ -15,6 +15,10 @@ Jungle is a website about its own growth. The home page is a single plant, grown
 - Snapshots under `v/<id>/` render their own copy of `changes.json`, so each one shows the plant as it was at that moment.
 - Tested at 2, 12, 60 and 200 changes. Past ~200 it gets dense, so a future session should plan for that (seasons? a canopy? more plants?).
 
+## Wind (`breeze` in `site/grow.js`)
+
+The home plant is never quite still. Each stem segment and each leaf is a damped spring; a segment carries everything above it, so tips move most and the thick old stem barely at all. A slow, uneven breeze leans it, and a cursor passing through pushes it aside; a leaf reached by keyboard stirs. Wind only displaces the drawing: it never changes the growth in `plant.js`. Under reduced motion the plant stands at rest. Redraws are capped near 60fps; at 200 leaves it holds that.
+
 ## The History as a field journal
 
 Each entry carries an ink sketch of the plant just after that change, its new leaf in colour with a leader line to the text (in the margin on wide screens, floated beside the text on narrow ones). All sketches share one scale, fitted to the current plant, so the page reads as growth in reverse. Keep the History and the home page speaking the same visual language.
@@ -25,7 +29,7 @@ Each entry carries an ink sketch of the plant just after that change, its new le
 
 ## Where it could go
 
-- Time and weather: light that follows the visitor's time of day, a slow sway, a falling leaf when a change is old.
+- Time and weather: light that follows the visitor's time of day, a falling leaf when a change is old. The wind could carry weather later (stiller at night, gustier on a day of many changes).
 - A way to watch the plant grow from seed to now, replaying the history (a scrubber, or a play button).
 - Share images (an Open Graph card of the current plant) to help the site travel.
 - Eventually the single plant may become a jungle: new species for different kinds of change, undergrowth, creatures. Earn that slowly.
