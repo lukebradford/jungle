@@ -1,6 +1,6 @@
 # Jungle
 
-Jungle is an experiment in agentic web design: a public website that started out blank and is grown entirely by agent sessions run in this directory. The original brief is in `spec.txt`.
+Jungle is an experiment in agentic web design: a public website (live at https://lukebradford.github.io/jungle/, repo `lukebradford/jungle`) that started out blank and is grown entirely by agent sessions run in this directory. The original brief is in `spec.txt`.
 
 ## When the user types "Continue"
 
