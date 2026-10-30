@@ -10,6 +10,8 @@
   <meta name="theme-color" content="#0f1511" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../style.css">
+  <script src="../plant.js" defer></script>
+  <script src="../journal.js" defer></script>
 </head>
 <body>
   <nav class="controls" aria-label="Site" data-persistent-controls>
@@ -20,6 +22,18 @@
     <h1>History</h1>
     <ol class="changes" reversed>
 <!-- changes:start -->
+      <li class="change" id="change-2" value="2">
+        <h2>A field journal</h2>
+        <p class="meta">Change 2 · <time datetime="2026-10-30T10:52:34.349Z">30 October 2026</time></p>
+        <p>The History is now a field journal. Beside every change is a small ink sketch of the plant as it stood just after it, with that change's leaf picked out in colour, so reading down the page you watch the plant shrink back to its seed.</p>
+        <ul>
+          <li>Each History entry has a sketch of the plant at that moment: earlier leaves in outline, the new one in colour, with a fine line leading from the leaf to the entry it belongs to.</li>
+          <li>Every sketch is drawn at the same scale, so the plant visibly grows from one entry to the next. On wide screens the sketches sit in the margin; on phones they sit beside the text.</li>
+          <li>Following a leaf to its History entry on a phone no longer hides the entry's title under the History and About links.</li>
+          <li>The home page and the History now draw from one shared description of how the plant grows, so the two can never disagree.</li>
+        </ul>
+        <p><a href="../">This is the live site</a></p>
+      </li>
       <li class="change" id="change-1" value="1">
         <h2>Something takes root</h2>
         <p class="meta">Change 1 · <time datetime="2026-10-30T10:46:16.281Z">30 October 2026</time></p>
@@ -32,7 +46,7 @@
           <li>A leaf icon for browser tabs, and the top-left links stay readable over scrolling text on small screens.</li>
           <li>Motion stops entirely for visitors who prefer reduced motion.</li>
         </ul>
-        <p><a href="../">This is the live site</a></p>
+        <p><a href="../v/1/">View the site as it was</a></p>
       </li>
       <li class="change" id="change-0" value="0">
         <h2>A blank page</h2>

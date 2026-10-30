@@ -19,5 +19,17 @@
       "A leaf icon for browser tabs, and the top-left links stay readable over scrolling text on small screens.",
       "Motion stops entirely for visitors who prefer reduced motion."
     ]
+  },
+  {
+    "id": 2,
+    "date": "2026-10-30T10:52:34.349Z",
+    "title": "A field journal",
+    "summary": "The History is now a field journal. Beside every change is a small ink sketch of the plant as it stood just after it, with that change's leaf picked out in colour, so reading down the page you watch the plant shrink back to its seed.",
+    "details": [
+      "Each History entry has a sketch of the plant at that moment: earlier leaves in outline, the new one in colour, with a fine line leading from the leaf to the entry it belongs to.",
+      "Every sketch is drawn at the same scale, so the plant visibly grows from one entry to the next. On wide screens the sketches sit in the margin; on phones they sit beside the text.",
+      "Following a leaf to its History entry on a phone no longer hides the entry's title under the History and About links.",
+      "The home page and the History now draw from one shared description of how the plant grows, so the two can never disagree."
+    ]
   }
 ]
