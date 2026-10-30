@@ -31,5 +31,15 @@
       "Following a leaf to its History entry on a phone no longer hides the entry's title under the History and About links.",
       "The home page and the History now draw from one shared description of how the plant grows, so the two can never disagree."
     ]
+  },
+  {
+    "id": 3,
+    "date": "2026-10-30T10:53:24.134Z",
+    "title": "A bare patch of ground",
+    "summary": "Wrong turns used to end at a generic error page. Now they end somewhere that belongs to the site: an empty stretch of soil, a note that nothing has grown there, and a way back to the plant.",
+    "details": [
+      "A page for addresses that don't exist, drawn as a bare patch of ground in the same ink as the plant.",
+      "Its links back to the plant, the History and About work however deep the mistyped address was."
+    ]
   }
 ]

@@ -19,10 +19,13 @@ Jungle is a website about its own growth. The home page is a single plant, grown
 
 Each entry carries an ink sketch of the plant just after that change, its new leaf in colour with a leader line to the text (in the margin on wide screens, floated beside the text on narrow ones). All sketches share one scale, fitted to the current plant, so the page reads as growth in reverse. Keep the History and the home page speaking the same visual language.
 
+## The 404
+
+`404.html` is a bare patch of ground. It can be served at any depth, so a tiny inline script sets a `<base>` at the site root (the first path segment on github.io, `/` elsewhere). Keep it free of the plant: nothing grew there.
+
 ## Where it could go
 
 - Time and weather: light that follows the visitor's time of day, a slow sway, a falling leaf when a change is old.
 - A way to watch the plant grow from seed to now, replaying the history (a scrubber, or a play button).
-- A proper 404 page: a bare patch of ground.
 - Share images (an Open Graph card of the current plant) to help the site travel.
 - Eventually the single plant may become a jungle: new species for different kinds of change, undergrowth, creatures. Earn that slowly.

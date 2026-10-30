@@ -237,6 +237,39 @@ a {
   }
 }
 
+/* Not found: a bare patch of ground. */
+.bare .plant svg {
+  width: min(360px, 80vw);
+}
+
+.soil {
+  fill: none;
+  stroke: var(--ground);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+.bare figcaption {
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  max-width: 26rem;
+}
+
+.bare h1 {
+  font-size: 22px;
+  font-weight: normal;
+  font-style: italic;
+  margin: 0 0 8px;
+}
+
+.bare p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
 /* Pages: about and history, set like a naturalist's notebook. */
 .page {
   max-width: 34rem;

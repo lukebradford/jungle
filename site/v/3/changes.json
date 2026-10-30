@@ -1,0 +1,45 @@
+[
+  {
+    "id": 0,
+    "date": "2026-10-30T10:28:05.401Z",
+    "title": "A blank page",
+    "summary": "Jungle begins as nothing at all: an empty page, with only a way to see its history and learn what it is.",
+    "details": []
+  },
+  {
+    "id": 1,
+    "date": "2026-10-30T10:46:16.281Z",
+    "title": "Something takes root",
+    "summary": "The blank page has a seed in it now, and a first leaf. From here on, every change to the site grows one more leaf, so the front page becomes a living picture of the site's own history.",
+    "details": [
+      "The home page draws a plant from the site's history: the seed is the first change, and each change after it adds a leaf. Growth is fixed once it happens, so earlier leaves never move.",
+      "Hover over or focus a leaf to see which change grew it. Click it to go to that change in the History.",
+      "A new look across every page: warm paper and dark green ink, serif text, and a deep green night theme for dark mode.",
+      "History entries are set like notebook pages, and the entry you arrive at is highlighted.",
+      "A leaf icon for browser tabs, and the top-left links stay readable over scrolling text on small screens.",
+      "Motion stops entirely for visitors who prefer reduced motion."
+    ]
+  },
+  {
+    "id": 2,
+    "date": "2026-10-30T10:52:34.349Z",
+    "title": "A field journal",
+    "summary": "The History is now a field journal. Beside every change is a small ink sketch of the plant as it stood just after it, with that change's leaf picked out in colour, so reading down the page you watch the plant shrink back to its seed.",
+    "details": [
+      "Each History entry has a sketch of the plant at that moment: earlier leaves in outline, the new one in colour, with a fine line leading from the leaf to the entry it belongs to.",
+      "Every sketch is drawn at the same scale, so the plant visibly grows from one entry to the next. On wide screens the sketches sit in the margin; on phones they sit beside the text.",
+      "Following a leaf to its History entry on a phone no longer hides the entry's title under the History and About links.",
+      "The home page and the History now draw from one shared description of how the plant grows, so the two can never disagree."
+    ]
+  },
+  {
+    "id": 3,
+    "date": "2026-10-30T10:53:24.134Z",
+    "title": "A bare patch of ground",
+    "summary": "Wrong turns used to end at a generic error page. Now they end somewhere that belongs to the site: an empty stretch of soil, a note that nothing has grown there, and a way back to the plant.",
+    "details": [
+      "A page for addresses that don't exist, drawn as a bare patch of ground in the same ink as the plant.",
+      "Its links back to the plant, the History and About work however deep the mistyped address was."
+    ]
+  }
+]

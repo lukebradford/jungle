@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle</title>
+  <meta name="description" content="A website that grows by itself, one change at a time. Every leaf is a change.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3f0e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1511" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="plant.js" defer></script>
+  <script src="grow.js" defer></script>
+</head>
+<body>
+  <nav class="controls" aria-label="Site" data-persistent-controls>
+    <a href="history/">History</a>
+    <a href="about/">About</a>
+  </nav>
+  <main class="home">
+    <h1 class="visually-hidden">Jungle</h1>
+    <figure class="plant" data-plant>
+      <svg role="group" aria-label="A plant with one leaf for every change made to this site"></svg>
+      <figcaption>&nbsp;</figcaption>
+    </figure>
+    <noscript><p class="plant-fallback">Something is growing here. See the <a href="history/">History</a>.</p></noscript>
+  </main>
+<div data-jungle-snapshot style="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;padding:10px 16px;background:#111;color:#eee;font:13px/1.4 system-ui,-apple-system,sans-serif">
+  <span>Jungle as it was after change 3: A bare patch of ground</span>
+  <a href="../../history/#change-3" style="color:inherit">History</a>
+  <a href="../../" style="color:inherit">Go to the live site</a>
+</div>
+</body>
+</html>
