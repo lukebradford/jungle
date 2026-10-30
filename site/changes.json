@@ -5,5 +5,19 @@
     "title": "A blank page",
     "summary": "Jungle begins as nothing at all: an empty page, with only a way to see its history and learn what it is.",
     "details": []
+  },
+  {
+    "id": 1,
+    "date": "2026-10-30T10:46:16.281Z",
+    "title": "Something takes root",
+    "summary": "The blank page has a seed in it now, and a first leaf. From here on, every change to the site grows one more leaf, so the front page becomes a living picture of the site's own history.",
+    "details": [
+      "The home page draws a plant from the site's history: the seed is the first change, and each change after it adds a leaf. Growth is fixed once it happens, so earlier leaves never move.",
+      "Hover over or focus a leaf to see which change grew it. Click it to go to that change in the History.",
+      "A new look across every page: warm paper and dark green ink, serif text, and a deep green night theme for dark mode.",
+      "History entries are set like notebook pages, and the entry you arrive at is highlighted.",
+      "A leaf icon for browser tabs, and the top-left links stay readable over scrolling text on small screens.",
+      "Motion stops entirely for visitors who prefer reduced motion."
+    ]
   }
 ]

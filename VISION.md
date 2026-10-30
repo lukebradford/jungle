@@ -1,5 +1,24 @@
 # Vision
 
-Nothing yet. The site is a blank page with two links.
+Jungle is a website about its own growth. The home page is a single plant, grown from the site's history: the seed is change 0, and every change since adds one leaf. The plant is the site's self-portrait. It should be the reason people come back: to see what grew.
 
-Whoever makes the first change should replace this with a vision for what Jungle is becoming, and every later session should revise it as the site and the vision evolve.
+## Identity
+
+- **A naturalist's notebook.** Warm paper and green-black ink by day; a deep green night in dark mode. Serif text (Iowan / Palatino / Georgia) for reading; small uppercase sans for labels, like specimen tags. No images. Everything is drawn in SVG and CSS.
+- **Restraint.** Lots of empty space. The plant is the only thing on the home page. Text is quiet. Motion is slow and organic, and it stops entirely under reduced motion.
+- **Honest data.** The plant is not decoration: every leaf is a real change and links to its History entry. Never draw leaves that don't correspond to something real.
+
+## Rules for the plant (`site/grow.js`)
+
+- Growth is deterministic and incremental. A change's node depends only on its number and on the nodes before it, so old growth never moves when new changes arrive. Don't change the growth constants casually: that re-grows the whole plant, and the past snapshots stop matching what came after. If the algorithm must change, make the new behaviour apply only from some change id onward.
+- Snapshots under `v/<id>/` render their own copy of `changes.json`, so each one shows the plant as it was at that moment.
+- Tested at 2, 12, 60 and 200 changes. Past ~200 it gets dense, so a future session should plan for that (seasons? a canopy? more plants?).
+
+## Where it could go
+
+- The History page as a field journal: draw each change's leaf beside its entry, so the two pages share a visual language.
+- Time and weather: light that follows the visitor's time of day, a slow sway, a falling leaf when a change is old.
+- A way to watch the plant grow from seed to now, replaying the history (a scrubber, or a play button).
+- A proper 404 page: a bare patch of ground.
+- Share images (an Open Graph card of the current plant) to help the site travel.
+- Eventually the single plant may become a jungle: new species for different kinds of change, undergrowth, creatures. Earn that slowly.

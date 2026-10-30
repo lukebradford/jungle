@@ -4,6 +4,37 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light dark;
+  --paper: #f3f0e8;
+  --ink: #1c241d;
+  --muted: #5d665a;
+  --stem: #4a5a3c;
+  --ground: #b9b19c;
+  --seed: #8a6a43;
+  --leaf-s: 38%;
+  --leaf-l: 40%;
+  --vein: rgb(243 240 232 / 0.55);
+  --mark: #e6e0cd;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1511;
+    --ink: #dde3d6;
+    --muted: #93a08f;
+    --stem: #7d9168;
+    --ground: #2f3a30;
+    --seed: #a5865c;
+    --leaf-s: 34%;
+    --leaf-l: 52%;
+    --vein: rgb(15 21 17 / 0.45);
+    --mark: #1c261e;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -11,13 +42,30 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #fff;
-  color: #111;
-  font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 var(--serif);
 }
 
 a {
   color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--stem);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* Persistent controls: History above About, top left, on every page. */
@@ -28,37 +76,184 @@ a {
   z-index: 10;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 2px;
-  font-size: 13px;
-  line-height: 1.5;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  font: 13px/1.5 var(--sans);
+  letter-spacing: 0.01em;
 }
 
 .controls a {
   text-decoration: none;
-  opacity: 0.55;
+  color: var(--muted);
 }
 
 .controls a:hover,
 .controls a:focus-visible,
 .controls a[aria-current="page"] {
-  opacity: 1;
+  color: var(--ink);
 }
 
 .controls a[aria-current="page"] {
   text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
+/* Home: the plant. */
+.home {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 72px 16px 48px;
+}
+
+.plant {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.plant svg {
+  display: block;
+  width: min(calc(var(--vw, 0) * 2.4px), 92vw);
+  height: auto;
+  max-height: 72vh;
+  max-height: 72svh;
+  overflow: visible;
+}
+
+.plant figcaption {
+  font: 12px/1.5 var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  min-height: 1.5em;
+  max-width: 92vw;
+  text-wrap: balance;
+}
+
+.plant-fallback {
+  color: var(--muted);
+}
+
+.ground {
+  stroke: var(--ground);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+.stem {
+  fill: none;
+  stroke: var(--stem);
+  stroke-width: var(--w);
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: draw 0.7s var(--d) cubic-bezier(0.3, 0.6, 0.4, 1) backwards;
+}
+
+.seed {
+  fill: var(--seed);
+  animation: unfurl 0.6s ease-out backwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.leaf {
+  fill: hsl(var(--h) var(--leaf-s) var(--leaf-l));
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: unfurl 0.9s calc(var(--d) + 0.35s) cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+  transition: fill 0.2s;
+}
+
+.vein {
+  stroke: var(--vein);
+  stroke-width: 0.8;
+  stroke-linecap: round;
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: unfurl 0.9s calc(var(--d) + 0.35s) cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+}
+
+.leaf-link {
+  cursor: pointer;
+}
+
+.leaf-link:hover .leaf,
+.leaf-link:focus-visible .leaf {
+  fill: hsl(var(--h) calc(var(--leaf-s) + 20%) calc(var(--leaf-l) + 8%));
+}
+
+.leaf-link:focus-visible {
+  outline: none;
+}
+
+.leaf-link:focus-visible .leaf {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+/* The newest leaf breathes, very slowly. */
+.grown .newest .leaf {
+  animation:
+    unfurl 0.9s calc(var(--d) + 0.35s) cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards,
+    breathe 6s calc(var(--d) + 1.4s) ease-in-out infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes unfurl {
+  from {
+    transform: scale(0);
+  }
+}
+
+@keyframes breathe {
+  50% {
+    transform: rotate(-4deg) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Pages: about and history, set like a naturalist's notebook. */
 .page {
-  max-width: 36rem;
-  padding: 96px 16px 64px;
-  margin-left: 16px;
+  max-width: 34rem;
+  padding: 104px 20px 96px;
+  margin: 0 auto;
 }
 
 .page h1 {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.2;
+  margin: 0 0 32px;
+}
+
+.page p {
+  margin: 0 0 1em;
 }
 
 .changes {
@@ -68,26 +263,59 @@ a {
 }
 
 .change {
-  margin: 0 0 32px;
+  margin: 0 0 8px;
+  padding: 16px 0 24px;
+  border-top: 1px solid var(--ground);
+  scroll-margin-top: 24px;
 }
 
 .change h2 {
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 600;
-  margin: 0;
+  line-height: 1.35;
+  margin: 0 0 2px;
 }
 
 .change .meta {
-  font-size: 13px;
-  opacity: 0.55;
-  margin: 0 0 8px;
+  font: 12px/1.5 var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px;
 }
 
 .change p,
 .change ul {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .change ul {
   padding-left: 20px;
+  font-size: 15px;
+}
+
+.change li + li {
+  margin-top: 4px;
+}
+
+.change :last-child a {
+  font: 13px/1.5 var(--sans);
+  color: var(--muted);
+}
+
+.change :last-child a:hover {
+  color: var(--ink);
+}
+
+.change:target {
+  background: var(--mark);
+  box-shadow: 0 0 0 12px var(--mark);
+  border-top-color: transparent;
+  border-radius: 1px;
+}
+
+@media (min-width: 720px) {
+  .page {
+    padding-top: 120px;
+  }
 }
