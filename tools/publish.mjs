@@ -123,6 +123,17 @@ function renderHistory(changes) {
   fs.writeFileSync(historyPage, `${before}\n${entries}\n${after}`);
 }
 
+// Stamps the live pages' own stylesheets and scripts with the change id, so returning
+// visitors' browsers fetch the new versions instead of pairing new pages with cached ones.
+function stampAssets(id) {
+  for (const rel of liveHtmlFiles()) {
+    const file = path.join(site, rel);
+    const html = fs.readFileSync(file, "utf8");
+    const stamped = html.replace(/\b(href|src)="([^":?#]+\.(?:css|js))(?:\?v=\d+)?"/g, `$1="$2?v=${id}"`);
+    if (stamped !== html) fs.writeFileSync(file, stamped);
+  }
+}
+
 // Rewrites relative links that point into v/ so they still resolve from inside a snapshot.
 function rewriteSnapshotLinks(html, liveDir, snapDir) {
   return html.replace(/\b(href|src)="([^"]*)"/g, (whole, attr, url) => {
@@ -178,6 +189,7 @@ const change = {
 changes.push(change);
 fs.writeFileSync(manifest, JSON.stringify(changes, null, 2) + "\n");
 renderHistory(changes);
+stampAssets(change.id);
 snapshot(change);
 
 const message = [

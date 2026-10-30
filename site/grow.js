@@ -76,7 +76,8 @@
     figure.classList.add("grown");
   }
 
-  fetch("changes.json")
+  // Revalidate, so a returning visitor always sees the newest leaf.
+  fetch("changes.json", { cache: "no-cache" })
     .then((r) => r.json())
     .then(render)
     .catch(() => {

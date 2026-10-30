@@ -91,7 +91,7 @@
     }
   }
 
-  fetch("../changes.json")
+  fetch("../changes.json", { cache: "no-cache" })
     .then((r) => r.json())
     .then(sketch)
     .catch(() => {});

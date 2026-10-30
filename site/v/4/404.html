@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <script>
+    // This page is served for any missing address, at any depth, so its links
+    // are resolved from the site's root rather than from wherever the visitor is.
+    (function () {
+      var root = location.hostname.slice(-10) === ".github.io" ? "/" + location.pathname.split("/")[1] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = root;
+      document.head.appendChild(base);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nothing grows here · Jungle</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3f0e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1511" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <nav class="controls" aria-label="Site" data-persistent-controls>
+    <a href="history/">History</a>
+    <a href="about/">About</a>
+  </nav>
+  <main class="home bare">
+    <figure class="plant">
+      <svg viewBox="-90 -40 180 64" aria-hidden="true" focusable="false">
+        <path class="ground" d="M-84 0H84"/>
+        <g class="soil">
+          <path d="M-9 0.5Q0 8 9 0.5"/>
+          <path d="M-58 5h5M-31 11h3M24 6h6M51 12h3M-44 17h2M39 18h3"/>
+        </g>
+      </svg>
+      <figcaption>
+        <h1>Nothing has grown here</h1>
+        <p>This patch of ground is bare. The address may be mistyped, or what was here has moved. <a href="./">The plant</a> is still growing, and everything it has grown is in the <a href="history/">History</a>.</p>
+      </figcaption>
+    </figure>
+  </main>
+<div data-jungle-snapshot style="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;padding:10px 16px;background:#111;color:#eee;font:13px/1.4 system-ui,-apple-system,sans-serif">
+  <span>Jungle as it was after change 4: Always the newest leaf</span>
+  <a href="../../history/#change-4" style="color:inherit">History</a>
+  <a href="../../" style="color:inherit">Go to the live site</a>
+</div>
+</body>
+</html>
